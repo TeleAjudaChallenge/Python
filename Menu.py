@@ -9,7 +9,7 @@ while True:
     print("2️⃣  - Quem Somos")
     print("3️⃣  - Contato")
     print("4️⃣  - Área do Paciente")
-    print("5️⃣  - Sair do Sistema")
+    print("5️⃣  - Sair do sistema")
     opcao = input("Digite o número da opção desejada: ")
 
     match opcao:
