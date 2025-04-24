@@ -115,8 +115,18 @@ def chatbot():
     input("\nPressione Enter para continuar...")
 
 def pesquisa_satisfacao():
-    print("\n📝 Pesquisa de Satisfação:")
-    print("Ajude-nos a melhorar respondendo a pesquisa.")
+    print("\n📝 Pesquisa de Satisfação")
+    iniciar = input("\nAperte 1 para começar a pesquisa: ")
+    if iniciar == "1":
+        notas = [
+            input("De 0 a 10, qual nota você dá para nosso aplicativo? "),
+            input("De 0 a 10, qual nota você dá para nosso site? "),
+            input("De 0 a 10, qual nota você dá para nosso suporte? ")
+        ]
+        print("\n✅ Obrigado por responder à pesquisa!")
+        print(f"Notas registradas: Aplicativo = {notas[0]}, Site = {notas[1]}, Suporte = {notas[2]}")
+    else:
+        print("Pesquisa cancelada.")
     input("\nPressione Enter para continuar...")
 
 # === Funções do submenu TUTORIAL ===
