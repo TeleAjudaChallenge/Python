@@ -1,7 +1,14 @@
+print("\n" + "=" * 50)
+print("🌐 SISTEMA DE ATENDIMENTO AO USUÁRIO".center(50))
+print("=" * 50)
+print("Para podermos te ajudar da melhor maneira, coletaremos alguns dados")
+nome = input("\nNos informe seu nome: ")
+email = input("\nNos informe seu email: ")
+
 # === Menu Principal ===
-def mostrar_menu_principal():
+def mostrar_menu_principal(nome):
     print("\n" + "=" * 50)
-    print("🌐 SISTEMA DE ATENDIMENTO AO USUÁRIO".center(50))
+    print(f"🌐 BEM-VINDO(A) {nome}".center(50))
     print("=" * 50)
     print("1️⃣  Ajuda")
     print("2️⃣  Quem Somos")
@@ -48,7 +55,7 @@ def menu_tutorial():
         opcao = input("\nEscolha uma opção: ")
         match opcao:
             case "1":
-                ver_consultas()
+                acessar_consultas()
             case "2":
                 instalar_app()
             case "3":
@@ -66,10 +73,10 @@ def menu_faq():
         print("📚 FAQ".center(50))
         print("=" * 50)
         print("1️⃣  Como ver minhas consultas")
-        print("2️⃣  Como instalar o aplicativo")
-        print("3️⃣  Como acessar o portal do paciente")
-        print("4️⃣  Meu aplicativo não está funcionando")
-        print("5️⃣  Horário de funcionamento do suporte")
+        print("2️⃣  Meu microfone não está funcionando")
+        print("3️⃣  Minha câmera não está funcionando")
+        print("4️⃣  Problemas ao fazer login")
+        print("5️⃣  Esqueci minha senha")
         print("6️⃣  🔙 Voltar ao menu de Ajuda")
         print("-" * 50)
 
@@ -78,52 +85,103 @@ def menu_faq():
             case "1":
                 ver_consultas()
             case "2":
-                instalar_app()
+                mic_problema()
             case "3":
-                acessar_portal()
+                camera_problema()
             case "4":
-                faq_app_nao_funciona()
+                login_problema()
             case "5":
-                faq_horario_suporte()
+                esqueci_senha()
             case "6":
                 break
             case _:
                 print("❗ Opção inválida. Tente novamente.")
                 input("\nPressione Enter para continuar...")
 
-# === Funções de conteúdo ===
+# === Funções de FAQ ===
 def ver_consultas():
     print("\n📅 Como ver minhas consultas:")
-    print("Acesse sua área do paciente e clique na aba 'Consultas'.")
+    print("Após fazer login no Portal do Paciente, clique em “Teleconsulta” no menu e veja sua agenda.")
+    print("No dia e horário marcados, clique na consulta para entrar.")
+    print("📘 Para aprender como fazer isso, acesse:")
+    print("👉 www.hcportal.com/consultas")
+    input("\nPressione Enter para continuar...")
+
+def mic_problema():
+    print("\n🎤 Meu microfone não está funcionando:")
+    print("Se você não está sendo ouvido na teleconsulta, o microfone pode estar bloqueado. ")
+    print("Também é importante selecionar a opção “Microfone” ao iniciar a consulta e aceitar o teste de som.")
+    print("📘 Para aprender como permitir acesso a seu microfone, acesse:")
+    print("👉 www.hcportal.com/microfone")
+
+def camera_problema():
+    print("\n📷 Minha câmera não está funcionando:")
+    print("A câmera pode precisar de permissão para funcionar corretamente durante a teleconsulta.")
+    print("A câmera ajuda na avaliação médica, por isso é importante que esteja funcionando")
+    print("📘 Para aprender como permitir acesso a sua câmera, acesse:")
+    print("👉 www.hcportal.com/camera")
+
+    input("\nPressione Enter para continuar...")
+
+def login_problema():
+    print("\n❌ Problemas ao fazer login:")
+    print("Se este for o seu primeiro acesso ao Portal do Paciente HC, você precisa criar sua conta")
+    print("e cadastrar uma senha antes de conseguir fazer login.")
+    print("📘 Para aprender como fazer o primeiro acesso passo a passo, acesse:")
+    print("👉 www.hcportal.com/primeiroacesso")
+    print("-------------")
+    print("Verifique se está usando o CPF e a senha correta.")
+    print("Se não conseguir acessar, tente redefinir a senha ou verifique se sua conta já está cadastrada.")
+    print("📘 Para aprender como redefinir sua senha, acesse:")
+    print("👉 www.hcportal.com/redefinirsenha")
+    input("\nPressione Enter para continuar...")
+
+def esqueci_senha():
+    print("\n🔐 Esqueci minha senha:")
+    print("Se você já possui uma conta e esqueceu a senha, clique em “Esqueci minha senha” na tela de login do Portal do Paciente. ")
+    print("Depois, informe seu CPF e siga as instruções para redefinir sua senha por e-mail ou SMS.")
+    print("🔗 Para saber mais como fazer isso, acesse: www.hcportal.com/senha")
+    input("\nPressione Enter para continuar...")
+
+# === Funções de Tutorial ===
+
+def acessar_consultas():
+    print("\n📅 Como ver minhas consultas:")
+    print("1. Acesse o Portal do Paciente com seu CPF e senha.")
+    print("2. No menu principal, clique em 'Teleconsulta'.")
+    print("3. Lá você verá a lista com suas consultas agendadas.")
+    print("4. No dia da consulta, clique nela para entrar na sala virtual.")
+    print("🔗 Saiba mais em: www.hcportal.com/consultas")
     input("\nPressione Enter para continuar...")
 
 def instalar_app():
     print("\n📲 Como instalar o aplicativo:")
-    print("Acesse a loja de aplicativos, busque pelo nome e clique em instalar.")
+    print("1. Acesse a loja de aplicativos do seu celular (Play Store ou App Store).")
+    print("2. Busque por 'HC Portal do Paciente'.")
+    print("3. Clique em 'Instalar' e aguarde o download.")
+    print("4. Após instalado, abra o aplicativo e faça login com seus dados.")
+    print("🔗 Saiba mais em: www.hcportal.com/instalacao")
     input("\nPressione Enter para continuar...")
 
 def acessar_portal():
-    print("\n🌐 Como acessar o portal do paciente:")
-    print("Acesse www.portal.com.br e entre com seu login e senha.")
+    print("\n🌐 Como acessar o Portal do Paciente:")
+    print("1. No navegador, digite: www.hcportal.com e pressione Enter.")
+    print("2. Clique em 'Entrar no Portal do Paciente'.")
+    print("3. Informe seu CPF e senha para fazer login.")
+    print("4. Caso seja seu primeiro acesso, clique em 'Primeiro acesso' e siga os passos.")
+    print("🔗 Acesse agora: www.hcportal.com")
     input("\nPressione Enter para continuar...")
 
-def faq_app_nao_funciona():
-    print("\n❌ Meu aplicativo não está funcionando:")
-    print("Tente reiniciar o aparelho ou reinstalar o aplicativo.")
-    input("\nPressione Enter para continuar...")
 
-def faq_horario_suporte():
-    print("\n🕒 Horário de funcionamento do suporte:")
-    print("Segunda a sexta, das 08h às 18h.")
-    input("\nPressione Enter para continuar...")
-
+# === Outras paginas ===
 def chatbot():
     print("\n🤖 Chatbot:")
     print("Assistente virtual para tirar suas dúvidas comuns.")
     input("\nPressione Enter para continuar...")
 
-def pesquisa_satisfacao():
+def pesquisa_satisfacao(nome):
     print("\n📝 Pesquisa de Satisfação")
+    print(f"Olá {nome}")
     iniciar = input("\nAperte 1 para começar a pesquisa: ")
     if iniciar == "1":
         notas = [
@@ -142,9 +200,14 @@ def quem_somos():
     print("Instituição dedicada ao bem-estar dos pacientes.")
     input("\nPressione Enter para continuar...")
 
-def contato():
+def contato(email):
     print("\n📞 Contato:")
-    print("Telefone: (11) 1234-5678 | Email: contato@instituicao.com")
+    print("✉️  Suporte: suporte.appportal@hc.fm.usp.br")
+    print("📘 Facebook: facebook.com/redelucymontoro")
+    print("📸 Instagram: @redelucymontoro")
+    print("--------------")
+    print("Se preferir podemos enviar um email para:")
+    print(email)
     input("\nPressione Enter para continuar...")
 
 def area_paciente():
@@ -155,14 +218,13 @@ def area_paciente():
 # === Main ===
 def main():
     while True:
-        mostrar_menu_principal()
+        mostrar_menu_principal(nome)
         opcao = input("\nEscolha uma opção: ")
-
         match opcao:
             case "1": menu_ajuda()
             case "2": quem_somos()
-            case "3": pesquisa_satisfacao()
-            case "4": contato()
+            case "3": pesquisa_satisfacao(nome)
+            case "4": contato(email)
             case "5": area_paciente()
             case "6":
                 print("\n👋 Saindo do sistema... Até mais!")
