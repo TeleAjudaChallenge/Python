@@ -180,6 +180,14 @@ def chatbot():
     print("Assistente virtual para tirar suas dúvidas comuns.")
     input("\nPressione Enter para continuar...")
 
+def calcular_media(notas):
+    n1 = float(notas['App'])
+    n2 = float(notas['Site'])
+    n3 = float(notas['Suporte'])
+    media = (n1 + n2 + n3) / 3
+    return media
+
+
 def pesquisa_satisfacao(nome):
     print("\n📝 Pesquisa de Satisfação")
     print(f"Olá {nome}")
@@ -198,6 +206,7 @@ def pesquisa_satisfacao(nome):
         print("Essas foram suas notas para pesquisa:")
         for k, v in notas.items():
             print(f"{k}: {v}")
+        print(f"A sua nota média foi {calcular_media(notas)}")
     else:
         print("Pesquisa cancelada.")
     input("\nPressione Enter para continuar...")
