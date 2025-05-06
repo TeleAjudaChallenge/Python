@@ -1,3 +1,4 @@
+#=== Inicio do Programa ===
 print("\n" + "=" * 50)
 print("🌐 SISTEMA DE ATENDIMENTO AO USUÁRIO".center(50))
 print("=" * 50)
@@ -184,13 +185,19 @@ def pesquisa_satisfacao(nome):
     print(f"Olá {nome}")
     iniciar = input("\nAperte 1 para começar a pesquisa: ")
     if iniciar == "1":
-        notas = [
-            input("De 0 a 10, qual nota você dá para nosso aplicativo? "),
-            input("De 0 a 10, qual nota você dá para nosso site? "),
-            input("De 0 a 10, qual nota você dá para nosso suporte? ")
-        ]
+        app = input("De 0 a 10, qual nota você dá para nosso aplicativo? ")
+        site = input("De 0 a 10, qual nota você dá para nosso site? ")
+        suporte = input("De 0 a 10, qual nota você dá para nosso suporte? ")
+        notas = {
+            'App' : app,
+            'Site' : site,
+            'Suporte' : suporte,
+        }
         print("\n✅ Obrigado por responder à pesquisa!")
-        print(f"Notas registradas: Aplicativo = {notas[0]}, Site = {notas[1]}, Suporte = {notas[2]}")
+        print("----------------------------------------------")
+        print("Essas foram suas notas para pesquisa:")
+        for k, v in notas.items():
+            print(f"{k}: {v}")
     else:
         print("Pesquisa cancelada.")
     input("\nPressione Enter para continuar...")
