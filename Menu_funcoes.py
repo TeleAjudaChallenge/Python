@@ -1,10 +1,11 @@
-#=== Inicio do Programa ===
+# === Inicio do Programa ===
 print("\n" + "=" * 50)
 print("🌐 SISTEMA DE ATENDIMENTO AO USUÁRIO".center(50))
 print("=" * 50)
 print("Para podermos te ajudar da melhor maneira, coletaremos alguns dados")
 nome = input("\nNos informe seu nome: ")
 email = input("\nNos informe seu email: ")
+
 
 # === Menu Principal ===
 def mostrar_menu_principal(nome):
@@ -18,6 +19,7 @@ def mostrar_menu_principal(nome):
     print("5️⃣  Área do Paciente")
     print("6️⃣  🚪 Sair do Sistema")
     print("-" * 50)
+
 
 # === Menu Ajuda ===
 def menu_ajuda():
@@ -33,13 +35,18 @@ def menu_ajuda():
 
         opcao = input("\nEscolha uma opção: ")
         match opcao:
-            case "1": menu_tutorial()
-            case "2": menu_faq()
-            case "3": chatbot()
-            case "4": break
+            case "1":
+                menu_tutorial()
+            case "2":
+                menu_faq()
+            case "3":
+                chatbot()
+            case "4":
+                break
             case _:
                 print("❗ Opção inválida. Tente novamente.")
                 input("\nPressione Enter para continuar...")
+
 
 # === Menu Tutorial ===
 def menu_tutorial():
@@ -66,6 +73,7 @@ def menu_tutorial():
             case _:
                 print("❗ Opção inválida. Tente novamente.")
                 input("\nPressione Enter para continuar...")
+
 
 # === Menu FAQ ===
 def menu_faq():
@@ -99,6 +107,7 @@ def menu_faq():
                 print("❗ Opção inválida. Tente novamente.")
                 input("\nPressione Enter para continuar...")
 
+
 # === Funções de FAQ ===
 def ver_consultas():
     print("\n📅 Como ver minhas consultas:")
@@ -108,12 +117,14 @@ def ver_consultas():
     print("👉 www.hcportal.com/consultas")
     input("\nPressione Enter para continuar...")
 
+
 def mic_problema():
     print("\n🎤 Meu microfone não está funcionando:")
     print("Se você não está sendo ouvido na teleconsulta, o microfone pode estar bloqueado. ")
     print("Também é importante selecionar a opção “Microfone” ao iniciar a consulta e aceitar o teste de som.")
     print("📘 Para aprender como permitir acesso a seu microfone, acesse:")
     print("👉 www.hcportal.com/microfone")
+
 
 def camera_problema():
     print("\n📷 Minha câmera não está funcionando:")
@@ -123,6 +134,7 @@ def camera_problema():
     print("👉 www.hcportal.com/camera")
 
     input("\nPressione Enter para continuar...")
+
 
 def login_problema():
     print("\n❌ Problemas ao fazer login:")
@@ -137,12 +149,15 @@ def login_problema():
     print("👉 www.hcportal.com/redefinirsenha")
     input("\nPressione Enter para continuar...")
 
+
 def esqueci_senha():
     print("\n🔐 Esqueci minha senha:")
-    print("Se você já possui uma conta e esqueceu a senha, clique em “Esqueci minha senha” na tela de login do Portal do Paciente. ")
+    print(
+        "Se você já possui uma conta e esqueceu a senha, clique em “Esqueci minha senha” na tela de login do Portal do Paciente. ")
     print("Depois, informe seu CPF e siga as instruções para redefinir sua senha por e-mail ou SMS.")
     print("🔗 Para saber mais como fazer isso, acesse: www.hcportal.com/senha")
     input("\nPressione Enter para continuar...")
+
 
 # === Funções de Tutorial ===
 
@@ -155,6 +170,7 @@ def acessar_consultas():
     print("🔗 Saiba mais em: www.hcportal.com/consultas")
     input("\nPressione Enter para continuar...")
 
+
 def instalar_app():
     print("\n📲 Como instalar o aplicativo:")
     print("1. Acesse a loja de aplicativos do seu celular (Play Store ou App Store).")
@@ -163,6 +179,7 @@ def instalar_app():
     print("4. Após instalado, abra o aplicativo e faça login com seus dados.")
     print("🔗 Saiba mais em: www.hcportal.com/instalacao")
     input("\nPressione Enter para continuar...")
+
 
 def acessar_portal():
     print("\n🌐 Como acessar o Portal do Paciente:")
@@ -180,6 +197,7 @@ def chatbot():
     print("Assistente virtual para tirar suas dúvidas comuns.")
     input("\nPressione Enter para continuar...")
 
+
 def calcular_media(notas):
     n1 = float(notas['App'])
     n2 = float(notas['Site'])
@@ -189,17 +207,36 @@ def calcular_media(notas):
 
 
 def pesquisa_satisfacao(nome):
-    print("\n📝 Pesquisa de Satisfação")
-    print(f"Olá {nome}")
+    print("\n" + "=" * 50)
+    print("📝 Pesquisa de Satisfação".center(50))
+    print("=" * 50)
+    print(f"\n Nome: {nome}")
     iniciar = input("\nAperte 1 para começar a pesquisa: ")
     if iniciar == "1":
-        app = input("De 0 a 10, qual nota você dá para nosso aplicativo? ")
-        site = input("De 0 a 10, qual nota você dá para nosso site? ")
-        suporte = input("De 0 a 10, qual nota você dá para nosso suporte? ")
+        while True:
+            site = float(input("\nDe 0 a 10, qual nota você dá para nosso site? "))
+            if (site >= 0 and site <= 10):
+                break
+            else:
+                print("❌Digite uma nota valida!")
+
+        while True:
+            app = float(input("\nDe 0 a 10, qual nota você dá para nosso aplicativo? "))
+            if (app >= 0 and app <= 10):
+                break
+            else:
+                print("❌Digite uma nota valida!")
+
+        while True:
+            suporte = input("\nDe 0 a 10, qual nota você dá para nosso suporte? ")
+            if (suporte >= 0 and suporte <= 10):
+                break
+            else:
+                print("❌Digite uma nota valida!")
         notas = {
-            'App' : app,
-            'Site' : site,
-            'Suporte' : suporte,
+            'App': app,
+            'Site': site,
+            'Suporte': suporte,
         }
         print("\n✅ Obrigado por responder à pesquisa!")
         print("----------------------------------------------")
@@ -211,10 +248,12 @@ def pesquisa_satisfacao(nome):
         print("Pesquisa cancelada.")
     input("\nPressione Enter para continuar...")
 
+
 def quem_somos():
     print("\n🏢 Quem Somos:")
     print("Instituição dedicada ao bem-estar dos pacientes.")
     input("\nPressione Enter para continuar...")
+
 
 def contato(email):
     print("\n📞 Contato:")
@@ -226,10 +265,12 @@ def contato(email):
     print(email)
     input("\nPressione Enter para continuar...")
 
+
 def area_paciente():
     print("\n👤 Área do Paciente:")
     print("Acesse e edite suas informações pessoais e histórico.")
     input("\nPressione Enter para continuar...")
+
 
 # === Main ===
 def main():
@@ -237,17 +278,23 @@ def main():
         mostrar_menu_principal(nome)
         opcao = input("\nEscolha uma opção: ")
         match opcao:
-            case "1": menu_ajuda()
-            case "2": quem_somos()
-            case "3": pesquisa_satisfacao(nome)
-            case "4": contato(email)
-            case "5": area_paciente()
+            case "1":
+                menu_ajuda()
+            case "2":
+                quem_somos()
+            case "3":
+                pesquisa_satisfacao(nome)
+            case "4":
+                contato(email)
+            case "5":
+                area_paciente()
             case "6":
                 print("\n👋 Saindo do sistema... Até mais!")
                 break
             case _:
                 print("❗ Opção inválida. Tente novamente.")
                 input("\nPressione Enter para continuar...")
+
 
 # Iniciar o programa
 main()
