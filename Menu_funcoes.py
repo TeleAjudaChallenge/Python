@@ -250,13 +250,22 @@ def pesquisa_satisfacao(nome):
 
 
 def quem_somos():
-    print("\n🏢 Quem Somos:")
-    print("Instituição dedicada ao bem-estar dos pacientes.")
+    print("\n" + "=" * 50)
+    print("👤 Quem Somos".center(50))
+    print("=" * 50)
+    print("Julia Corrêa e Souza de Altino")
+    print("RM 564870")
+    print("--------------------------------------")
+    print("Matheus Borges Sansão Silva")
+    print("RM 562896")
+    print("--------------------------------------")
     input("\nPressione Enter para continuar...")
 
 
 def contato(email):
-    print("\n📞 Contato:")
+    print("\n" + "=" * 50)
+    print("📞 Contato:".center(50))
+    print("=" * 50)
     print("✉️  Suporte: suporte.appportal@hc.fm.usp.br")
     print("📘 Facebook: facebook.com/redelucymontoro")
     print("📸 Instagram: @redelucymontoro")
@@ -268,7 +277,7 @@ def contato(email):
 
 def area_paciente():
     print("\n👤 Área do Paciente:")
-    print("Acesse e edite suas informações pessoais e histórico.")
+    print("Para acessar a area do paciene baixe o aplicativo.")
     input("\nPressione Enter para continuar...")
 
 
