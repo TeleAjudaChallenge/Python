@@ -2,15 +2,25 @@
 print("\n" + "=" * 50)
 print("🌐 SISTEMA DE ATENDIMENTO AO USUÁRIO".center(50))
 print("=" * 50)
-print("Para podermos te ajudar da melhor maneira, coletaremos alguns dados")
-nome = input("\nNos informe seu nome: ")
-email = input("\nNos informe seu email: ")
+print("1️⃣  Já tenho cadastro")
+print("2️⃣  Fazer cadastro")
+opcao = input("Escolha uma oção: ")
+if opcao == "1":
+    usuario = input("\nUsuario: ")
+    senha = input("\nSenha: ")
+    validar_usuario(usuario, senha)
+else:
+
+
+
+def validar_usuario(usuario, senha):
+    print("Confirmado")
 
 
 # === Menu Principal ===
-def mostrar_menu_principal(nome):
+def mostrar_menu_principal(usuario):
     print("\n" + "=" * 50)
-    print(f"🌐 BEM-VINDO(A) {nome}".center(50))
+    print(f"🌐 BEM-VINDO(A) {usuario}".center(50))
     print("=" * 50)
     print("1️⃣  Ajuda")
     print("2️⃣  Quem Somos")
@@ -284,7 +294,7 @@ def area_paciente():
 # === Main ===
 def main():
     while True:
-        mostrar_menu_principal(nome)
+        mostrar_menu_principal(usuario)
         opcao = input("\nEscolha uma opção: ")
         match opcao:
             case "1":
@@ -292,9 +302,9 @@ def main():
             case "2":
                 quem_somos()
             case "3":
-                pesquisa_satisfacao(nome)
+                pesquisa_satisfacao(usuario)
             case "4":
-                contato(email)
+                contato(usuario)
             case "5":
                 area_paciente()
             case "6":
